@@ -25,6 +25,10 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 public class FirstForm1 extends JFrame {
 
@@ -76,6 +80,12 @@ public class FirstForm1 extends JFrame {
 		panel1.add(txtpnNaruiDostavuZa);
 		
 		textField = new JTextField();
+		textField.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtInsertYourAdress.setText(null);
+			}
+		});
 		textField.setText("            Unesite va\u0161u adresu");
 		textField.setColumns(10);
 		textField.setBounds(29, 335, 347, 41);
@@ -137,5 +147,9 @@ public class FirstForm1 extends JFrame {
 		});
 		btnOrder_1.setBounds(377, 327, 74, 41);
 		panel2.add(btnOrder_1);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(516, 30, 81, 41);
+		panel2.add(comboBox);
 	}
 }

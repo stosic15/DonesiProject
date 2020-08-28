@@ -87,6 +87,9 @@ public class LoginRegisterForm extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String adress = tfAdress.getText();
 				String password = String.copyValueOf(pfPassword.getPassword());
+		//treba logika za konekciju u FirstForm
+				
+				
 				dispose();
 				
 				
