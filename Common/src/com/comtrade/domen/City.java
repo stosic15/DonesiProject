@@ -13,7 +13,7 @@ public class City implements GeneralDomen {
 		super();
 	}
 	public City(String city_name) {
-		super();
+		super(); 
 		this.city_name = city_name;
 	}
 	public int getId_city() {

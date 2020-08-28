@@ -6,11 +6,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import com.comtrade.domen.City;
+import com.comtrade.domen.Region;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JScrollBar;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.util.List;
+import java.awt.event.ActionEvent;
 
 public class AdressConfirmForm extends JFrame {
 
@@ -18,7 +26,14 @@ public class AdressConfirmForm extends JFrame {
 	private JTextField tfNuber;
 	private JTextField tfPostalC;
 	private JTextField tfStreet;
-
+	private JComboBox cbCity;
+	private JComboBox cbRegion;
+	private int id_city;
+	private int id_region;
+	private List<City>citys;
+	private List<Region>regions;
+	
+	
 	/**
 	 * Create the frame.
 	 */
@@ -60,11 +75,33 @@ public class AdressConfirmForm extends JFrame {
 		contentPane.add(tfPostalC);
 		tfPostalC.setColumns(10);
 		
-		JComboBox cbCity = new JComboBox();
+		 cbCity = new JComboBox();
+		 cbCity.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 		for(City c : citys) {
+		 			if(c.getCity_name().equals(cbCity.getSelectedItem().toString())) {
+		 				id_city = c.getId_city();
+		 				System.out.println(id_city);
+		 				break;
+		 			}
+		 		}
+		 	}
+		 });
 		cbCity.setBounds(59, 81, 192, 33);
 		contentPane.add(cbCity);
 		
-		JComboBox cbRegion = new JComboBox();
+		cbRegion = new JComboBox();
+		cbRegion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				for(Region r : regions) {
+					if(r.getRegion_name().equals(cbRegion.getSelectedItem().toString())) {
+						id_region = r.getId_region();
+						System.out.println(id_region);
+						break;
+					}
+				}
+			}
+		});
 		cbRegion.setBounds(59, 221, 192, 33);
 		contentPane.add(cbRegion);
 		
@@ -74,6 +111,10 @@ public class AdressConfirmForm extends JFrame {
 		tfStreet.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Nastavite");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton.setBounds(83, 574, 239, 60);
 		contentPane.add(btnNewButton);
 	}

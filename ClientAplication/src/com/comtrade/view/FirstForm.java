@@ -73,7 +73,6 @@ public class FirstForm extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String adress = txtInsertYourAdress.getText();
 				HomeAdress homeAdress = new HomeAdress();
-			
 				TransferObject tObject = TransferObject.create(homeAdress, ConstantesFC.HOME_ADRESS, ConstantesBL.POST);
 				try {
 					TransferObject tr1 = FrontController.getInstance().execute(tObject);
@@ -86,6 +85,8 @@ public class FirstForm extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				AdressConfirmForm adrConfirmForm = new AdressConfirmForm();
+				adrConfirmForm.setVisible(true);
 			}
 		});
 		btnOrder.setBounds(355, 335, 74, 41);
