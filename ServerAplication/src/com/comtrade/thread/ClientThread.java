@@ -29,7 +29,7 @@ public class ClientThread extends Thread {
 			}
 			
 	}
-
+ 
 	}
 
 	private void processTheData(TransferObject transferObject) {

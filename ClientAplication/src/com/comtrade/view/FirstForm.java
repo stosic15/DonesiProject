@@ -30,7 +30,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
-public class FirstForm1 extends JFrame {
+public class FirstForm extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -44,7 +44,7 @@ public class FirstForm1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FirstForm1 frame = new FirstForm1();
+					FirstForm frame = new FirstForm();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -56,7 +56,7 @@ public class FirstForm1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FirstForm1() {
+	public FirstForm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 725, 524);
 		contentPane = new JPanel();

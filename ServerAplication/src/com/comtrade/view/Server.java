@@ -35,7 +35,7 @@ public class Server extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Create the frame. 
 	 */
 	public Server() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
